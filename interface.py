@@ -38,7 +38,7 @@ while True:
         #   Sistema pra salva todas as despessas colocadas, mas tambem com um
         #   sistema para que o usuario consiga escolher o que salve e juntamente
         #   apargar oque ele quer.
-            pass
+            lista_de_despesas
     elif resp == 4:
         #   Finaliza o programa
         cabeçario('Saindo do sistema... até logo!')
