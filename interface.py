@@ -37,7 +37,7 @@ while True:
     elif resp == 3:
         #   Sistema pra salva todas as despessas colocadas, mas tambem com um
         #   sistema para que o usuario consiga escolher o que salve e juntamente
-        #   apargar oque ele quer. 
+        #   apargar oque ele quer.
             pass
     elif resp == 4:
         #   Finaliza o programa
