@@ -8,6 +8,16 @@ def cabeçario(msg):
     print(msg.center(42))
     print(linha())
 
+def menu(lista):
+    cabeçario('MENU PRINCIPAL')
+    c = 1
+    for item in lista:
+        print(f'\033[32m{c}\033[m - \033[34m{item}\033[m')
+        c += 1
+    print(linha())
+    opc = leiaint('\033[32mSua opção\033[m: ')
+    return opc
+
 def leiaint(msg):
     while True:
         try:
@@ -18,16 +28,6 @@ def leiaint(msg):
             print('\033[31mERRO! osúario não informou os dados!\033[m')
         else:
             return n
-
-def menu(lista):
-    cabeçario('MENU PRINCIPAL')
-    c = 1
-    for item in lista:
-        print(f'\033[32m{c}\033[m - \033[34m{item}\033[m')
-        c += 1
-    print(linha())
-    opc = leiaint('\033[32mSua opção\033[m: ')
-    return opc
 
 def leiafloat(msg):
     while True:
