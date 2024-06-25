@@ -1,7 +1,9 @@
 from time import sleep
 from utilitarios import *
 from descricao import *
+
 lista_de_despesas = []
+
 while True:
     resp = menu(['Anotar despesas','Ver historico','Salvar despeses','Sair do sistema'])
     if resp == 1:
@@ -38,7 +40,7 @@ while True:
         #   Sistema pra salva todas as despessas colocadas, mas tambem com um
         #   sistema para que o usuario consiga escolher o que salve e juntamente
         #   apargar oque ele quer.
-            lista_de_despesas
+        salvar_despesas(lista_de_despesas)
     elif resp == 4:
         #   Finaliza o programa
         cabeçario('Saindo do sistema... até logo!')

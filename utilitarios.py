@@ -46,3 +46,12 @@ def valida_data(data_str):
     except ValueError:
         print('\033[31mData inválida! Use o formato DD/MM/AAAA.\033[m')
         return None
+    
+def salvar_despesas(lista_de_despesas, nome_arquivo='despesas.txt'):
+    try:
+        with open(nome_arquivo, 'w') as arquivo:
+            for despesa in lista_de_despesas:
+                arquivo.write(f'{despesa.data} - {despesa.valor} - {despesa.categoria}\n')
+        print(f'\033[32mDespesas salvas com sucesso em {nome_arquivo}\033[m.')
+    except Exception as e:
+        print(f'\033[31mErro ao salvar despesas: {e}\033[m')
