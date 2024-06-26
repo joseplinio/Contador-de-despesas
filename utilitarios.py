@@ -49,9 +49,9 @@ def valida_data(data_str):
 
 def salvar_despesas(lista_de_despesas, nome_arquivo='despesas.txt'):
     try:
-        with open(nome_arquivo, 'w') as arquivo:
+        with open(nome_arquivo, 'a') as arquivo:
             for despesa in lista_de_despesas:
                 arquivo.write(f'{despesa.data} - {despesa.valor} - {despesa.categoria}\n')
-        print(f'\033[23mDespesas salvas com sucesso em  {nome_arquivo}\033[m.')
+        print(f'\033[32mDespesas salvas com sucesso em  {nome_arquivo}\033[m.')
     except Exception as e:
         print(f'\033[31mErro ao salvar despesas: {e}\033[m')
