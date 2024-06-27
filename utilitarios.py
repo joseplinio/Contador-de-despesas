@@ -1,13 +1,16 @@
 from datetime import datetime
 
+#    Função que cria uma linha
 def linha(msg=42):
     return msg*'_'
 
+#   Cria um cabeçario usando a def linha
 def cabeçario(msg):
     print(linha())
     print(msg.center(42))
     print(linha())
 
+#   Cria um menu usando a def linha e cabeçario, mas também usa um for pra uma lista é a inumera assim criando o menu
 def menu(lista):
     cabeçario('MENU PRINCIPAL')
     c = 1
@@ -18,6 +21,7 @@ def menu(lista):
     opc = leiaint('\033[32mSua opção\033[m: ')
     return opc
 
+#   Função que verifica o número inteiro antes de pegar os dados
 def leiaint(msg):
     while True:
         try:
@@ -29,6 +33,7 @@ def leiaint(msg):
         else:
             return n
 
+#   Função que verifica o número float antes de pegar os dados
 def leiafloat(msg):
     while True:
         try:
@@ -39,7 +44,8 @@ def leiafloat(msg):
             print('\033[31mERRO! usúario não informou os dados!\033[m')
         else:
             return n
-    
+
+#   Função que valida a formataçao da data e sua validade (usa a biblioteca datetime, tive ajuda do chat GTP nessa drf) 
 def valida_data(data_str):
     try:
         return datetime.strptime(data_str,'%d/%m/%Y')
@@ -47,6 +53,7 @@ def valida_data(data_str):
         print('\033[31mData inválida! Use o formato DD/MM/AAAA.\033[m')
         return None
 
+#   Função que salva as despesas em arquivo .txt e os salva nesse aquivo de forma formatada(ajuda do chat GTP)
 def salvar_despesas(lista_de_despesas, nome_arquivo='despesas.txt'):
     try:
         with open(nome_arquivo, 'a') as arquivo:
