@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 #    Função que cria uma linha
 def linha(msg=42):
@@ -55,10 +56,27 @@ def valida_data(data_str):
 
 #   Função que salva as despesas em arquivo .txt e os salva nesse aquivo de forma formatada(ajuda do chat GTP)
 def salvar_despesas(lista_de_despesas, nome_arquivo='despesas.txt'):
+    """
+    depois eu faço ;]
+    """
     try:
         with open(nome_arquivo, 'a') as arquivo:
             for despesa in lista_de_despesas:
                 arquivo.write(f'{despesa.data} - {despesa.valor} - {despesa.categoria}\n')
+        print(f'\033[32mDespesas salvas com sucesso em  {nome_arquivo}\033[m.')
+    except Exception as e:
+        print(f'\033[31mErro ao salvar despesas: {e}\033[m')
+
+def salvar_despesa(despesa, nome_arquivo='despesa.txt'):
+    """
+    A def salvar_despesa usa dois parametros [despesa, nome_arquivo = "despesa.txt"]
+    a def tenta abrir o arquivo colocando as informaçoes no arquivo usando o metedo "a"
+    para escrever a despesa de forma formatada e garante que o arquivo e fechado logo depois do uso,
+    ele tambem retorna a user o erro caso tenha dado um.
+    """
+    try:
+        with open(nome_arquivo, 'a') as arquivo:
+            arquivo.write(f'{despesa.data} - {despesa.valor} - {despesa.categoria}\n')
         print(f'\033[32mDespesas salvas com sucesso em  {nome_arquivo}\033[m.')
     except Exception as e:
         print(f'\033[31mErro ao salvar despesas: {e}\033[m')
