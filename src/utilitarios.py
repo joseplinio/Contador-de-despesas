@@ -1,5 +1,4 @@
 from datetime import datetime
-import json
 
 #    Função que cria uma linha
 def linha(msg=42):
