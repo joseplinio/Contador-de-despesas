@@ -67,3 +67,4 @@ def salvar_despesa(despesa, nome_arquivo='despesa.txt'):
         print(f'\033[32mDespesas salvas com sucesso em  {nome_arquivo}\033[m.')
     except Exception as e:
         print(f'\033[31mErro ao salvar despesas: {e}\033[m')
+

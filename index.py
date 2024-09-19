@@ -2,14 +2,11 @@ from time import sleep
 from src.utilitarios import *
 from src.descricao import *
 
-lista_de_despesas = []
-
 while True:
 
     resp = menu(['Anotar despesas','Ver historico','Sair do sistema'])
     if resp == 1:
-        #   Adicionar despesas do usuario, de fomar que cada um dos dados seja
-        #   validados antes de entra para o banco de dados. 
+        #   Adicionar despesas do usuario: 
         
         while True:
             
@@ -34,19 +31,22 @@ while True:
                 break
     
     elif resp == 2:
-        #   Mostra todas as despesas (formatada) de forma que o osuario entenda
-        #   de forma dinamica sua despeas mensais, ou semanais
-        if lista_de_despesas:
-            cabeçario('\033[32mHistórico de Despesas\033[m:')
-            for despesa in lista_de_despesas:
-                print(despesa)
-        
-        else:
+        #   Mostra todas as despesas:
+        cabeçario('\033[32mHistórico de Despesas\033[m:')
+        try:
+            with open("despesa.txt", "r") as arquivo_data:
+                for despesa in arquivo_data:
+                    print(f'\t{despesa}')
+
+        except ValueError:
+            print(f'\033[31mErro! O arquivo deve ser um str.\033[m')
+
+        except FileNotFoundError:
             print('\033[31mNenhuma despesa registrada\033[m.')
         input('\033[32mPressione Enter para continuar\033[m...') 
     
     elif resp == 3:
-        #   Finaliza o programa
+        # Finaliza o programa:
         cabeçario('Saindo do sistema... até logo!')
         break
     
